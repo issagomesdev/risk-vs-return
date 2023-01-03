@@ -1,0 +1,257 @@
+.plan {
+    padding: 40px 40px 0px 40px;
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  .contents {
+    width: 77%;
+  }
+  
+  .contents-riscocarteira {
+    width: 23%;
+  }
+  
+  .riscocarteira {
+    position: relative;
+    margin: 90px 0px 0px 15px;
+    width: 90%;
+    height: 980px;
+    background-color: #e8e8e8;
+  }
+  
+  .riscocarteira label {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+  }
+  
+  .set-riscocarteira {
+    width: 100%;
+    margin: 0px 5px 15px 0px;
+  }
+  
+  .topic-riscocarteira {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 20px;
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .group {
+    display: flex;
+  }
+  
+  .set {
+    width: 44%;
+    margin: 0px 5px 15px 0px;
+  }
+  
+  .set-prcntg {
+    width: 12%;
+  }
+  
+  .topic {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 20px;
+    font-size: 15px;
+  }
+  
+  .topic-set {
+    position: relative;
+    background: #b0c4de;
+    color: #363636;
+    height: 60px;
+    font-size: 100%;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin: 0px 0px 3px 0px;
+  }
+  
+  .topic-set label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    margin-left: 3px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .textlab-set {
+    background: #fafafa;
+    font-weight: bolder;
+  }
+  
+  .textlab-set div {
+    padding: 15px 0px 15px 10px;
+    color: #363636;
+  }
+  
+  .input-set {
+    background: #fafafa;
+    font-weight: bolder;
+    margin-top: 83.3px;
+    text-align: center;
+    height: 288px;
+  }
+  
+  .input-set label {
+    font-size: 20px;
+  }
+  
+  .input-set div {
+    padding: 10px 0px 10px 0px;
+    color: #363636;
+  }
+  
+  .variavel {
+    background: #fafafa;
+    font-weight: bolder;
+    margin-top: 63.3px !important;
+    text-align: center;
+    height: 238px !important;
+  }
+  
+  .exterior {
+    background: #fafafa;
+    font-weight: bolder;
+    margin-top: 63.3px !important;
+    text-align: center;
+    height: 48px !important;
+  }
+  
+  label#reais {
+    left: 43%;
+  }
+  
+  input {
+    font-family: "Merriweather", serif;
+    font-weight: bolder;
+    font-size: 18px;
+    width: 150px;
+    height: 25px;
+    border: 0 none;
+    outline: 0;
+    color: #363636;
+    background-color: #e8e8e8;
+  }
+  
+  .prcntg-set {
+    background: #fafafa;
+    font-weight: bolder;
+    margin-top: 83.3px;
+    text-align: center;
+    height: 288px;
+  }
+  
+  .prcntg-set div {
+    padding: 15px;
+  }
+  
+  label#prcntg {
+    left: 61.5%;
+  }
+  
+  .total {
+    position: relative;
+    background: #e8e8e8;
+    color: #363636;
+    height: 60px;
+    font-size: 100%;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+  
+  .total label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    margin-left: 2px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .risco-da-carteira {
+    text-transform: uppercase;
+    margin: 0px 5px 5px 0px;
+    width: 100%;
+  }
+  
+  .risco-da-carteira label {
+    left: 20%;
+  }
+  
+  .geral {
+    margin: 10px 0px 10px 0px;
+  }
+  
+  .axd {
+    width: 70%;
+    display: flex;
+  }
+  
+  .rxr {
+    text-transform: capitalize;
+    margin: 0px 5px 5px 0px;
+    width: 100%;
+  }
+  
+  .result {
+    width: 100%;
+    background: #fafafa;
+  }
+  
+  .rc {
+    width: 70%;
+  }
+  
+  .set-risco-da-carteira {
+    display: flex;
+  }
+  
+  .set-risco-da-carteira label {
+    padding: 15px 0px 15px 10px;
+    color: #363636;
+    font-weight: bolder;
+  }
+  
+  .nivel {
+    display: grid;
+    background: #e8e8e8;
+    width: 100%;
+    margin: 0px 5px 0px 0px;
+  }
+  
+  .parameter {
+    display: grid;
+    background: #fafafa;
+    width: 100%;
+  }
+  
+  .copyright {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .copyright label {
+    font-weight: bold;
+    color: #363636;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding-bottom: 20px;
+  }
+  

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Risk x Return</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+</head>
+<body> 
+
+  <div class="plan">
+
+    <!-- COLETAR E CALCULAR VALORES (1) -->
+  
+    <div class="container">
+  
+      <div class="contents">
+  
+        <div class="group">
+  
+          <div class="set">
+  
+            <div class="topic">
+              <label> Tipos de ativos </label>
+            </div>
+  
+            <div class="topic-set">
+              <label> Renda Fixa </label>
+            </div>
+  
+            <div class="textlab-set">
+              <div>
+                <label> TPF Curtos </label>
+              </div>
+              <div>
+                <label> TPF Médios </label>
+              </div>
+              <div>
+                <label> TPF Longos </label>
+              </div>
+              <div>
+                <label> DI </label>
+              </div>
+              <div>
+                <label> Crédito Privado </label>
+              </div>
+              <div>
+                <label> FIDCS </label>
+              </div>
+            </div>
+  
+            <div class="total">
+              <label> Total Renda Fixa </label>
+            </div>
+  
+          </div>
+          <!-- 100000.00
+               1000000,00
+ -->
+  
+          <div class="set">
+  
+            <div class="topic center">
+              <label> Valor aplicado </label>
+            </div>
+  
+            <div class="input-set">
+              <div>
+                <label> R$ </label> <input type="text" id="tpfc" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="tpfm" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="tpfl" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="di" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="cp" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="fidcs" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+            </div>
+  
+            <div class="total">
+              <label id="trf"> R$ 0,00 </label>
+            </div>
+  
+          </div>
+  
+          <div class="set set-prcntg">
+  
+            <div class="topic center">
+              <label> % </label>
+            </div>
+  
+            <div class="prcntg-set">
+              <div>
+                <label id="pUm"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pDois"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pTres"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pQuatro"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pCinco"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pSeis"> 0.00 </label>
+              </div>
+            </div>
+  
+            <div class="total">
+              <label id="ptUm"> 0.00 </label>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="group">
+  
+          <div class="set">
+  
+            <div class="topic-set">
+              <label> Renda Variável e Investimentos Estruturados </label>
+            </div>
+  
+            <div class="textlab-set">
+              <div id="fundo-de-acoes-a-textlab">
+                <label> Fundo de Ações A </label>
+              </div>
+              <div id="fundo-de-acoes-b-textlab">
+                <label> Fundo de Ações B </label>
+              </div>
+              <div id="multimercado-textlab">
+                <label> Multimercado </label>
+              </div>
+              <div id="imobiliário-textlab">
+                <label> Imobiliário </label>
+              </div>
+              <div id="fip-textlab">
+                <label> FIP </label>
+              </div>
+            </div>
+  
+            <div class="total">
+              <label> Total Renda Variável </label>
+            </div>
+  
+          </div>
+  
+          <div class="set">
+  
+            <div class="input-set variavel">
+              <div>
+                <label> R$ </label> <input  onkeyup="calcular()" type="text" id="faa" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input  onkeyup="calcular()" type="text" id="fab" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input  onkeyup="calcular()" type="text" id="mltm" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input  onkeyup="calcular()" type="text" id="mbl" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input  onkeyup="calcular()" type="text" id="fip" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+            </div>
+  
+            <div class="total">
+              <label id="trv"> R$ 0,00 </label>
+            </div>
+  
+          </div>
+  
+          <div class="set set-prcntg">
+  
+            <div class="prcntg-set variavel">
+              <div>
+                <label id="pSete"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pOito"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pNove"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pDez"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pOnze"> 0.00 </label>
+              </div>
+            </div>
+  
+            <div class="total">
+              <label id="ptDois"> 0.00 </label>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="group">
+  
+          <div class="set">
+  
+            <div class="topic-set">
+              <label> Exterior </label>
+            </div>
+  
+            <div class="textlab-set">
+              <div id="exterior-textlab">
+                <label> Exterior </label>
+              </div>
+            </div>
+  
+            <div class="total">
+              <label> Total Exterior </label>
+            </div>
+  
+            <div class="total geral">
+              <label> Total Geral </label>
+            </div>
+  
+          </div>
+  
+          <div class="set">
+  
+            <div class="input-set exterior">
+              <div>
+                <label> R$ </label> <input type="text" id="xtrr" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+            </div>
+  
+            <div class="total">
+              <label id="rxtr"> R$ 0,00 </label>
+            </div>
+  
+            <div class="total geral">
+  
+              <label id="tg"> R$ 0,00 </label>
+            </div>
+  
+          </div>
+  
+          <div class="set set-prcntg">
+  
+            <div class="prcntg-set exterior">
+              <div>
+                <label id="pDoze"> 0.00 </label>
+              </div>
+            </div>
+  
+            <div class="total">
+              <label id="ptTres"> 0.00 </label>
+            </div>
+  
+            <div class="total geral">
+              <label id="ptQuatro"> 100.00 </label>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      <div class="contents-riscocarteira">
+  
+        <div class="group">
+  
+          <div class="set-riscocarteira">
+  
+            <div class="topic center">
+              <label> Risco Carteira </label>
+            </div>
+  
+            <div class="riscocarteira">
+  
+              <label id="rc"> 0.00 </label>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    <!-- COLETAR E CALCULAR VALORES (2) -->
+  
+    <div class="container">
+  
+      <div class="contents">
+  
+        <div class="group">
+  
+          <div class="set">
+  
+            <div class="topic">
+              <label> Tipos de ativos </label>
+            </div>
+  
+            <div class="topic-set">
+              <label> Renda Fixa </label>
+            </div>
+  
+            <div class="textlab-set">
+              <div>
+                <label> TPF Curtos </label>
+              </div>
+              <div>
+                <label> TPF Médios </label>
+              </div>
+              <div>
+                <label> TPF Longos </label>
+              </div>
+              <div>
+                <label> DI </label>
+              </div>
+              <div>
+                <label> Crédito Privado </label>
+              </div>
+              <div>
+                <label> FIDCS </label>
+              </div>
+            </div>
+  
+            <div class="total">
+              <label> Total Renda Fixa </label>
+            </div>
+  
+          </div>
+  
+          <div class="set">
+  
+            <div class="topic center">
+              <label> Valor aplicado </label>
+            </div>
+  
+            <div class="input-set">
+              <div>
+                <label> R$ </label> <input type="text" id="tpfc2" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="tpfm2" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="tpfl2" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="di2" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="cp2" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="fidcs2" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+            </div>
+  
+            <div class="total">
+              <label id="trf2"> R$ 0.00 </label>
+            </div>
+  
+          </div>
+  
+          <div class="set set-prcntg">
+  
+            <div class="topic center">
+              <label> % </label>
+            </div>
+  
+            <div class="prcntg-set">
+              <div>
+                <label id="pUm2"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pDois2"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pTres2"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pQuatro2"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pCinco2"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pSeis2"> 0.00 </label>
+              </div>
+            </div>
+  
+            <div class="total">
+              <label id="ptUm2"> 0.00 </label>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="group">
+  
+          <div class="set">
+  
+            <div class="topic-set">
+              <label> Renda Variável e Investimentos Estruturados </label>
+            </div>
+  
+            <div class="textlab-set">
+              <div id="fundo-de-acoes-a-textlab">
+                <label> Fundo de Ações A </label>
+              </div>
+              <div id="fundo-de-acoes-b-textlab">
+                <label> Fundo de Ações B </label>
+              </div>
+              <div id="multimercado-textlab">
+                <label> Multimercado </label>
+              </div>
+              <div id="imobiliário-textlab">
+                <label> Imobiliário </label>
+              </div>
+              <div id="fip-textlab">
+                <label> FIP </label>
+              </div>
+            </div>
+  
+            <div class="total">
+              <label> Total Renda Variável </label>
+            </div>
+  
+          </div>
+  
+          <div class="set">
+  
+            <div class="input-set variavel">
+              <div>
+                <label> R$ </label> <input type="text" id="faa2" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="fab2" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="mltm2" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="mbl2" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+              <div>
+                <label> R$ </label> <input type="text" id="fip2" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+            </div>
+  
+            <div class="total">
+              <label id="trv2"> R$ 0.00 </label>
+            </div>
+  
+          </div>
+  
+          <div class="set set-prcntg">
+  
+            <div class="prcntg-set variavel">
+              <div>
+                <label id="pSete2"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pOito2"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pNove2"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pDez2"> 0.00 </label>
+              </div>
+              <div>
+                <label id="pOnze2"> 0.00 </label>
+              </div>
+            </div>
+  
+            <div class="total">
+              <label id="ptDois2"> 0.00 </label>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="group">
+  
+          <div class="set">
+  
+            <div class="topic-set">
+              <label> Exterior </label>
+            </div>
+  
+            <div class="textlab-set">
+              <div id="exterior-textlab">
+                <label> Exterior </label>
+              </div>
+            </div>
+  
+            <div class="total">
+              <label> Total Exterior </label>
+            </div>
+  
+            <div class="total geral">
+              <label> Total Geral </label>
+            </div>
+  
+          </div>
+  
+          <div class="set">
+  
+            <div class="input-set exterior">
+              <div>
+                <label> R$ </label> <input type="text" id="xtrr2" onkeyup="calcular()" onkeypress="$(this).mask('###0,00', {reverse: true});">
+              </div>
+            </div>
+  
+            <div class="total">
+              <label id="rxtr2"> R$ 0.00 </label>
+            </div>
+  
+            <div class="total geral">
+  
+              <label id="tg2"> R$ 0.00 </label>
+            </div>
+  
+          </div>
+  
+          <div class="set set-prcntg">
+  
+            <div class="prcntg-set exterior">
+              <div>
+                <label id="pDoze2"> 0.00 </label>
+              </div>
+            </div>
+  
+            <div class="total">
+              <label id="ptTres2"> 0.00 </label>
+            </div>
+  
+            <div class="total geral">
+              <label id="ptQuatro2"> 100.00 </label>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      <div class="contents-riscocarteira">
+  
+        <div class="group">
+  
+          <div class="set-riscocarteira">
+  
+            <div class="topic center">
+              <label> Risco Carteira </label>
+            </div>
+  
+            <div class="riscocarteira">
+  
+              <label id="rc2"> 0.00 </label>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    <!-- AUMENTO OU DIMINUIÇÃO E RISCO CARTEIRA -->
+  
+    <div class="contents">
+  
+      <div class="set axd">
+  
+        <div class="total rxr">
+          <label> Aumento ou Diminuição do Risco </label>
+        </div>
+  
+        <div class="total result">
+          <label id="adri"> 0.00 </label>
+        </div>
+  
+      </div>
+  
+      <div class="set axd">
+  
+        <div class="total rxr">
+          <label> Aumento ou Diminuição do Retorno </label>
+        </div>
+  
+        <div class="total result">
+          <label id="adre"> 0.00 </label>
+        </div>
+  
+      </div>
+  
+      <div class="set rc">
+  
+        <div class="total risco-da-carteira">
+          <label> Risco Da Carteira </label>
+        </div>
+  
+        <div class="set-risco-da-carteira">
+          <div class="nivel">
+            <label> Muito baixo </label>
+            <label> Baixo </label>
+            <label> Médio </label>
+            <label> Alto </label>
+            <label> Muito Alto </label>
+          </div>
+  
+          <div class="parameter">
+            <label> Até 1 </label>
+            <label> Acima de 1 até 2 </label>
+            <label> Acima de 3 até 3 </label>
+            <label> Acima de 3 até 4 </label>
+            <label> Acima de 4 até 5 </label>
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+  
+  <!-- COPYRIGHT -->
+  
+  <div class="copyright">
+    <label> © Copyright all rights reserved to Issa Gomes - @codedbyissa </label>
+  </div>
+  
+  <script  src="./script.js"></script>
+
+</body>
+</html>
