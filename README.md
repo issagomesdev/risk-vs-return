@@ -4,7 +4,7 @@
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-![Preview](https://rxr.byissa.tech/preview.png)
+![Preview](https://rxr.byissa.dev/preview.png)
 
 <p align="center">
   <a href="#about">About</a> •
@@ -20,7 +20,7 @@
 
 This was one of the author's first freelance jobs and was built as a lightweight, standalone tool using only HTML, CSS, and JavaScript.
 
-[![project](https://img.shields.io/badge/📱Visit_this_project-000?style=for-the-badge&logo=project)](https://rxr.byissa.tech)
+[![project](https://img.shields.io/badge/📱Visit_this_project-000?style=for-the-badge&logo=project)](https://rxr.byissa.dev)
 
 <h2 id="features">✨ Features</h2>
 
